@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npm install",
     "cy:open": "./node_modules/.bin/cypress open",
-    "cy:run": "./node_modules/.bin/cypress run"
+    "start": "./node_modules/.bin/cypress run"
   },
   "repository": {
     "type": "git",
