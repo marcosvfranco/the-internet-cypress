@@ -9,6 +9,7 @@
     "eslint-plugin-cypress": "^2.12.1"
   },
   "scripts": {
+    "build": "npm install",
     "cy:open": "./node_modules/.bin/cypress open",
     "cy:run": "./node_modules/.bin/cypress run"
   },
