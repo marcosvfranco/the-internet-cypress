@@ -1,9 +1,9 @@
 # the-internet-cypress
 Test framework using [Cypress][https://docs.cypress.io/] to test the website [The Internet][https://the-internet.herokuapp.com/]
 
-Code Quality:
+## Code Quality:
 
 [ESLint][https://eslint.org/docs/user-guide/configuring/]
 
-CI/CD
+## CI/CD
 [GitHub Actions][https://docs.github.com/en/actions]
