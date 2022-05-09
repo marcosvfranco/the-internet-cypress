@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-describe('when opening checkboxes page', () => {
-    it('then a list of checkboxes is displayed', () =>{
+describe('When opening checkboxes page', () => {
+    it('and a list of checkboxes is displayed, the checkboxes are checked and unchecked', () =>{
         cy.visit('/checkboxes')
 
         // example of how to get the checked attribute (if exists, if does not will return undefined)
