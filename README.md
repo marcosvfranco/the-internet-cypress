@@ -9,3 +9,6 @@ You can use and apply it to test another real world websites!
 
 ## CI/CD
 [GitHub Actions](https://docs.github.com/en/actions)
+
+## External Plugins
+[Cypress Real Events](https://github.com/dmtrKovalenko/cypress-real-events)

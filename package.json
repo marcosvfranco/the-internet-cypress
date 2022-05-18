@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/marcosvfranco/the-internet-cypress/issues"
   },
-  "homepage": "https://github.com/marcosvfranco/the-internet-cypress#readme"
+  "homepage": "https://github.com/marcosvfranco/the-internet-cypress#readme",
+  "dependencies": {
+    "cypress-real-events": "^1.7.0"
+  }
 }

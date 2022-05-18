@@ -14,9 +14,12 @@ describe('When opening horizontal slider page', () => {
             .should('have.text', destiny)
     })
 
-    // this second implementation does not work for input type = range
-    // however it's a good solution to see the slider being changed like in the real world
-    it.skip('and a slider is displayed, the slider is moved to a specific position', () =>{
+    // this second implementation work only with a external plugin named cypress-real-events
+    // for input type = range
+    // cy.type() fire the event keypress as a simulation, but some components does not work
+    // with simulated events, because of that, this plugin fires a real event using
+    // Chrome Dev Protocol. So we can use it here.
+    it('and a slider is displayed, the slider is moved to a specific position', () =>{
         cy.visit('/horizontal_slider')
 
         // to achieve this, we need to know the attributes of the slider component
@@ -24,24 +27,22 @@ describe('When opening horizontal slider page', () => {
         // we need to move the slider using the keyboard (right arrow) to move the slider
         // each type the key is pressed, the slider will move one value equal to the "step" attribute
 
-        const destiny = 1
+        const destiny = 4
         const step = 0.5
         const initialValue = 0
         const stepsToReachDestiny = (destiny - initialValue) / step 
 
-        // now we repeat x times (stepsToReachDestiny) 
-        // the key press to reach the value
-        const keyboardCommandRepeated = '{rightArrow}'.repeat(stepsToReachDestiny)
-
         // and call the function
-        cy.get('.sliderContainer > input').click()
-        // cy.get('.sliderContainer > input').invoke('val', 3).trigger('change')
+        cy.get('.sliderContainer > input').focus()
 
-        cy.get('.sliderContainer > input').type(keyboardCommandRepeated, { force: true, log: true }).trigger('change')
+        Cypress._.times(stepsToReachDestiny, (i) => {
+            cy.get('.sliderContainer > input').realType('{rightarrow}')
+            cy.get('.sliderContainer > input').trigger('change')
+        })
 
         // check the value in the slider
         cy.get('.sliderContainer > span')
-            .should('have.value', destiny)
+            .should('have.text', destiny)
     })
 
 })
